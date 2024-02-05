@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList} from 'react-native-gesture-handler';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text,Platform} from 'react-native';
 import ProductImage from '../../components/ProductImage/ProductImage';
 import {HOME} from '../../messages/CommonMessages';
 import {colors} from '../../styles/colors';
@@ -45,7 +45,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22.5,
-    fontWeight: '500',
+
+    ...Platform.select({
+      android: {    fontWeight: '900',},
+      ios:{    fontWeight: '700',}
+    }),
     fontFamily: 'Poppins-Regular',
     color: colors.black,
     paddingLeft: 30,

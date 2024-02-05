@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet, SafeAreaView, StatusBar, View} from 'react-native';
+import {Text, StyleSheet, SafeAreaView, StatusBar, View,Platform} from 'react-native';
 
 import {colors} from '../../styles/colors';
 /**
@@ -35,8 +35,12 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
   },
   title: {
-    fontFamily: 'Poppins-Black',
+    fontFamily: 'Poppins-Bold',
     fontSize: 27,
+    ...Platform.select({
+      android: {    fontFamily:'Poppins-Regular',fontWeight: '900',},
+      ios:{    fontWeight: '900',}
+    }),
     color: colors.black,
   },
 });
