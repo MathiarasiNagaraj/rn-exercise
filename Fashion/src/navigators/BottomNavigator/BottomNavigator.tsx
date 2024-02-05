@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 90,
-    backgroundColor: 'red',
+
   },
 
   btnCircleUp: {
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 1,
+    marginBottom: 10,
   },
   button: {
     flex: 1,

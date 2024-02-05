@@ -52,7 +52,7 @@ export default OfferCard;
 const styles = StyleSheet.create({
   card: {
     width: 290,
-    height: 350,
+    height: 380,
     position: 'relative',
     marginVertical: 25,
     backgroundColor: colors.grey,

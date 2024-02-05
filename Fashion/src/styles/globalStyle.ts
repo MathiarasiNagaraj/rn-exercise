@@ -43,7 +43,7 @@ export const globalStyles = StyleSheet.create({
   mediumText: {
     fontSize: 17,
     fontWeight: '500',
-      marginBottom: 8,
+      // marginBottom: 8,
       fontFamily:'Poppins-Medium'
   },
   greyText: {
