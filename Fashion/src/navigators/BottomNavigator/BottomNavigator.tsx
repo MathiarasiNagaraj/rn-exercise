@@ -5,10 +5,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import {BOTTOM_TABS} from '../../constants/commonConstants';
 import {Alert, Animated, TouchableOpacity} from 'react-native';
 import {CurvedBottomBar} from 'react-native-curved-bottom-bar';
-import TopSection from '../../container/TopSection/TopSection';
-import WishList from '../../screens/WishList/WishList';
-import Help from '../../screens/Help/Help';
-import Profile from '../../screens/Profile/Profile';
 
 const BottomNavigator = () => {
   const renderIcon = (routeName, selectedTab) => {
@@ -58,11 +54,10 @@ const BottomNavigator = () => {
   return (
     <CurvedBottomBar.Navigator
       type="DOWN"
-      style={styles.bottomBar}
-      height={70}
+      height={80}
       circleWidth={60}
       bgColor="white"
-      initialRouteName="title1"
+      initialRouteName="Home"
       borderTopLeftRight={false}
       screenOptions={{headerShown: false}}
       renderCircle={({selectedTab, navigate}) => (
@@ -98,6 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: colors.black,
     bottom: 20,
+
     shadowColor: colors.white,
     shadowOffset: {
       width: 0,
@@ -106,7 +102,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 1,
-    marginBottom: 10,
+
   },
   button: {
     flex: 1,

@@ -38,7 +38,9 @@ export default ProductSection;
 
 const styles = StyleSheet.create({
   sectionWrapper: {
+
     marginVertical: 20,
+
   },
   wrapper: {
     marginVertical: 20,

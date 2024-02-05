@@ -30,7 +30,11 @@ export const globalStyles = StyleSheet.create({
     width: 57,
     borderRadius: 999,
     backgroundColor: colors.white,
-    elevation:10
+   elevation: 18,
+   shadowColor: colors.black,
+    shadowOffset: { width: 0, height: 12 },
+    shadowRadius: 10,
+    shadowOpacity:0.25
   },
   greyIcon: {
     justifyContent: 'center',

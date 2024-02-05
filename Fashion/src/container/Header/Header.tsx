@@ -1,5 +1,13 @@
 import React from 'react';
-import {Text, StyleSheet, SafeAreaView, StatusBar, View,Platform} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  StatusBar,
+  View,
+  Platform,
+} from 'react-native';
+import {CustomStatusBar} from '../../components/CustomStatusBar/CustomStatusBar';
 
 import {colors} from '../../styles/colors';
 /**
@@ -8,14 +16,21 @@ import {colors} from '../../styles/colors';
  */
 export const Header = ({title, icon, style, cart}) => {
   return (
-    <SafeAreaView style={[styles.wrapper, style]}>
-      <View style={styles.innerWrapper}>
-        {title && <Text style={styles.title}>{title}</Text>}
-        {icon && icon}
-        {cart && cart}
-        <StatusBar backgroundColor={colors.white} barStyle="dark-content" />
-      </View>
-    </SafeAreaView>
+    <>
+      <StatusBar
+        translucent={true}
+        backgroundColor="transparent"
+        barStyle="dark-content"
+      />
+
+      <SafeAreaView style={[styles.wrapper,style]}>
+        <View style={[styles.innerWrapper,style]}>
+          {title && <Text style={styles.title}>{title}</Text>}
+          {icon && icon}
+          {cart && cart}
+        </View>
+      </SafeAreaView>
+    </>
   );
 };
 const styles = StyleSheet.create({
@@ -24,13 +39,14 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-
-    zIndex: 1000,
+    zIndex: 2,
+    
   },
   innerWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginTop: Platform.select({android: 25, ios: 10}),
     paddingHorizontal: 30,
     paddingVertical: 15,
   },
@@ -38,8 +54,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
     fontSize: 27,
     ...Platform.select({
-      android: {    fontFamily:'Poppins-Regular',fontWeight: '900',},
-      ios:{    fontWeight: '900',}
+      android: {fontFamily: 'Poppins-Regular', fontWeight: '900'},
+      ios: {fontWeight: '900'},
     }),
     color: colors.black,
   },

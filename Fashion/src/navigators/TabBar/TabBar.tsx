@@ -12,6 +12,7 @@ export const TabBar = ({ tabContentComponent }) => {
 
   const tabItems = CATEGORY.map(category => (
     <Tab.Screen
+    
       name={category.name}
       key={category.name}
       children={() => React.createElement(tabContentComponent, { category: category.category })}
@@ -20,6 +21,7 @@ export const TabBar = ({ tabContentComponent }) => {
 
   return (
     <Tab.Navigator
+    
      style={styles.wrapper}
       screenOptions={{
         tabBarLabelStyle: {
@@ -27,8 +29,10 @@ export const TabBar = ({ tabContentComponent }) => {
           fontWeight: '500',
           fontFamily: 'Poppins-Medium',
           textTransform: 'capitalize',
-          backgroundColor:colors.white
+          backgroundColor: colors.white
+        
         },
+
         tabBarScrollEnabled:true,
         tabBarItemStyle: {
           width: 98,
@@ -50,10 +54,10 @@ const styles = StyleSheet.create({
     ...Platform.select(
       {
         ios: {
-          marginTop:70
+          marginTop:90
         },
         android: {
-        marginTop:65
+        marginTop:85
         }
       }
     )

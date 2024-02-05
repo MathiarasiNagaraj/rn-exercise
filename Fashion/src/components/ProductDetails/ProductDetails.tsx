@@ -11,12 +11,16 @@ interface ProductDetailsProps {
   detail: Product;
 }
 const ProductDetails: React.FC<ProductDetailsProps> = ({detail}) => {
-  const snapPoints = useMemo(() => ['39%', '55%'], []);
+  const snapPoints = useMemo(() => ['38%', '50%'], []);
   const sizes = (
     <FlatList
       horizontal
+      ItemSeparatorComponent={() => <View style={{ width: 0 }} />}
+
       data={detail.available_sizes}
-      renderItem={({item}) => <Text style={[styles.itemWrapper,globalStyles.text]}>{item}</Text>}
+      renderItem={({item}) => (
+        <Text style={[styles.itemWrapper, globalStyles.text]}>{item}</Text>
+      )}
       keyExtractor={item => item}
       style={styles.wrapper}
     />
@@ -36,7 +40,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({detail}) => {
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={false}
         scrollEnabled>
-          
         <View style={styles.textContainer}>
           <Text style={styles.title}>{detail.product_name}</Text>
           <View style={styles.priceWrapper}>
@@ -68,19 +71,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({detail}) => {
               </Text>
             </View>
           </View>
-
-        
         </View>
         <View style={styles.sizeWrapper}>
           <Text style={styles.text}>
             {HOME.POPULAR_PRODUCTS.availableSizes}
           </Text>
-
           <View>{sizes}</View>
         </View>
- 
-     
-     
       </BottomSheetScrollView>
     </BottomSheet>
   );
@@ -117,7 +114,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: colors.grey,
     fontSize: 16,
-    // marginRight: 4,
   },
   textContainer: {
     backgroundColor: colors.white,
@@ -143,20 +139,16 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: '300',
     fontFamily: 'Poppins-Bold',
-    marginHorizontal: 13,
+    marginHorizontal: 10,
   },
   sizeWrapper: {
     fontFamily: 'Poppins-Regular',
-    backgroundColor: colors.lightestGrey,
-    width: '100%',
-    padding: 20,
+    backgroundColor: colors.lightGrey,
+
+    paddingHorizontal: 30,
+    paddingVertical: 20,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignContent: 'center',
-    alignSelf: 'center',
-    margin: 'auto',
-    marginBottom: 32,
+    // justifyContent: 'center',
   },
 });
 

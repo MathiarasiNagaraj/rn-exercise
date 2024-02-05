@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {ScrollView, Text} from 'react-native';
+import {ScrollView, Text,View} from 'react-native';
 import {Product, Offer} from '../../interface/Products';
 import BottomNavigator from '../../navigators/BottomNavigator/BottomNavigator';
 import DrawerNavigator from '../../navigators/DrawerNavigator/DrawerNavigator';
@@ -35,7 +35,7 @@ const MainSection: React.FC<MainSectionProps> = ({category}) => {
   }, [category]);
 
   return (
-   
+   <View >
       <ScrollView showsVerticalScrollIndicator={false}>
      
       <OfferSection offers={selectedOffers} />
@@ -43,7 +43,7 @@ const MainSection: React.FC<MainSectionProps> = ({category}) => {
     
       </ScrollView> 
       
-     
+      </View>
        
  
    

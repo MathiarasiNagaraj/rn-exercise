@@ -1,10 +1,9 @@
 import React from 'react';
-import {Image, Platform, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View,Dimensions} from 'react-native';
 import {Offer} from '../../interface/Products';
 import {HOME} from '../../messages/CommonMessages';
 import {colors} from '../../styles/colors';
 import {globalStyles} from '../../styles/globalStyle';
-import DropShadow from 'react-native-drop-shadow';
 interface OfferProps {
   detail: Offer;
 }
@@ -49,10 +48,14 @@ const OfferCard: React.FC<OfferProps> = ({detail}) => {
 
 export default OfferCard;
 
+const deviceWidth = Dimensions.get("window").width
+const deviceHeight=Dimensions.get("window").height
 const styles = StyleSheet.create({
   card: {
-    width: 290,
-    height: 380,
+    
+   width:deviceWidth*0.81,
+    height: deviceHeight*0.54,
+
     position: 'relative',
     marginVertical: 25,
     backgroundColor: colors.grey,
@@ -71,6 +74,7 @@ const styles = StyleSheet.create({
   },
   codeWrapper: {
     flexDirection: 'row',
+    marginBottom:12
   },
  
   img: {
