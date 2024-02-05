@@ -26,7 +26,7 @@ const TopSection = ({ navigation }) => {
             </TouchableOpacity>
           }
       />
-      <TabBar tabContentComponent={MainSection} />
+      <TabBar tabContentComponent={MainSection}  />
   
 
     </>

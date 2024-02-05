@@ -1,5 +1,8 @@
 import {
+  Image,
   ImageBackground,
+  Platform,
+  SafeAreaView,
   ScrollView,
   StyleSheet,
   TouchableOpacity,
@@ -18,15 +21,15 @@ import Icon from '../../components/Icon/Icon';
 import {Header} from '../../container//Header/Header';
 import ProductDetails from '../../components/ProductDetails/ProductDetails';
 
-export const Product = ({route, navigation}) => {
+export const Product = ({route}) => {
 
   const {detail}=route.params
   const {addToCart} = useContext(CartContext);
-  const navigatione = useNavigation();
+  const navigation = useNavigation();
  
 
   const handleBackClick = () => {
-    navigatione.goBack();
+    navigation.goBack();
   };
 
   const onAddToCartHandler = () => {
@@ -36,7 +39,8 @@ export const Product = ({route, navigation}) => {
     navigation.toggleDrawer();
   };
   return (
-    <ScrollView>
+    <SafeAreaView>
+    <ScrollView >
       <Header
         icon={
           <TouchableOpacity onPress={handleBackClick}>
@@ -54,19 +58,30 @@ export const Product = ({route, navigation}) => {
           />
         }
         title={undefined}
-        style={globalStyles.transparentBg(0)}
+        style={{
+          backgroundColor: `rgba(255, 0, 0, 0)`
+        }}
       />
-      <ImageBackground source={{uri: detail.modelImg}} style={styles.img} />
+      <Image source={{uri: detail.modelImg}} style={styles.img} />
 
       <ProductDetails detail={detail} />
 
+      </ScrollView>
+
       <AddToCart onAddToCartHandler={onAddToCartHandler} />
-    </ScrollView>
+      </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
   img: {
-    height: 635,
+    ...Platform.select({
+      ios: {
+  height:650
+      },
+      android: {
+        height:760
+      }
+    }),
     width: '100%',
   },
 

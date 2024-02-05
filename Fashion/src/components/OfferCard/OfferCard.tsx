@@ -27,15 +27,16 @@ const OfferCard: React.FC<OfferProps> = ({detail}) => {
             <Text style={[globalStyles.whiteText, globalStyles.mediumText]}>
               {HOME.OFFER.useCode}
             </Text>
+            <View style={ styles.underLine}>
             <Text
               style={[
                 globalStyles.mediumText,
                 globalStyles.whiteText,
-                styles.underLine,
+        
               ]}>
               {detail.discountCode}
             </Text>
-          
+            </View>
           </View>
           <Text style={[globalStyles.mediumText, globalStyles.whiteText]}>
             {detail.discountSlogan}
@@ -51,18 +52,22 @@ export default OfferCard;
 const styles = StyleSheet.create({
   card: {
     width: 290,
-    height: 380,
+    height: 350,
     position: 'relative',
     marginVertical: 25,
-    backgroundColor: colors.lightGrey,
-    overflow: 'hidden',
+    backgroundColor: colors.grey,
     borderRadius: 10,
-    elevation:16
+    elevation: 16,
+    shadowColor: colors.black,
+    shadowOffset: { width: 0, height: 12 },
+    shadowRadius: 10,
+    shadowOpacity:0.25
   },
   underLine: {
     borderBottomWidth: 1.5,
     borderBottomColor: colors.white,
     margin: 0,
+    padding:0
   },
   codeWrapper: {
     flexDirection: 'row',

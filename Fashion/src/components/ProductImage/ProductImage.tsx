@@ -19,7 +19,7 @@ const ProductImage :React.FC<ProductImageProps>= ({detail}) => {
     navigation.navigate(SCREEN.PRODUCT, {detail});
   };
   return (
-    <TouchableOpacity onPress={handleProductClick} style={styles.shadowProp}>
+    <TouchableOpacity onPress={handleProductClick} >
       <Image source={{uri: detail.modelImg}} style={styles.img} />
     </TouchableOpacity>
   );
@@ -31,15 +31,8 @@ const styles = StyleSheet.create({
   img: {
     height: 150,
     width: 130,
-    // marginLeft: 25,
     position: 'relative',
     borderRadius: 5,
   },
-  shadowProp: {
-    shadowColor: '#171717',
-    shadowOffset: {width: 2, height: 4},
-    shadowOpacity: 0.6,
-    shadowRadius: 13,
-    elevation: 5,
-  },
+ 
 });

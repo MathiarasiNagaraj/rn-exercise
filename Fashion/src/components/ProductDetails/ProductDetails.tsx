@@ -16,7 +16,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({detail}) => {
     <FlatList
       horizontal
       data={detail.available_sizes}
-      renderItem={({item}) => <Text style={styles.itemWrapper}>{item}</Text>}
+      renderItem={({item}) => <Text style={[styles.itemWrapper,globalStyles.text]}>{item}</Text>}
       keyExtractor={item => item}
       style={styles.wrapper}
     />
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: colors.darkOrange,
     fontSize: 22,
-    fontWeight: '700',
+    fontWeight: '600',
     marginVertical: 5,
   },
   Rating: {
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   itemWrapper: {
     color: colors.black,
     fontSize: 17,
-    fontWeight: '900',
+    fontWeight: '300',
     fontFamily: 'Poppins-Bold',
     marginHorizontal: 13,
   },

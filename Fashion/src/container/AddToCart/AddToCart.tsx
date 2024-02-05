@@ -31,13 +31,20 @@ const AddToCart: React.FC<AddToCartProps> = ({onAddToCartHandler}) => {
 export default AddToCart;
 const styles = StyleSheet.create({
   bottomWrapper: {
+    backgroundColor:colors.white,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
     columnGap: 30,
-    height:125,
     padding: 28,
-    backgroundColor: colors.white,
     elevation: 13,
+    shadowColor: colors.black,
+    shadowOffset: { width: 0, height: 12 },
+    shadowRadius: 10,
+    shadowOpacity:0.35,
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left:0
   },
 });

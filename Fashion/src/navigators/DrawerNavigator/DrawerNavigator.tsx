@@ -10,7 +10,7 @@ import {
 const DrawerNavigator = ({navigation}) => {
   return (
     <DrawerContentScrollView>
-    
+    <Text>Custom drawer</Text>
     </DrawerContentScrollView>
   );
 };

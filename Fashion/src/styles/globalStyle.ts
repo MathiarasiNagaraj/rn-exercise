@@ -10,7 +10,7 @@ export const globalStyles = StyleSheet.create({
   text: {
     fontSize: 18,
     color: colors.black,
-      fontWeight: '600',
+      fontWeight: '700',
     fontFamily:'Poppins-Regular'
   },
   bgColor: (color:any) => ({
@@ -58,12 +58,12 @@ export const globalStyles = StyleSheet.create({
 
   bolderText: {
     fontSize: 25,
-      fontWeight: '300',
+      fontWeight: '700',
       fontFamily:'Poppins-Bold'
   },
   boldText: {
     fontSize: 26,
-      fontWeight: '800',
+      fontWeight: '700',
       fontFamily:'Poppins-Regular'
   },
 

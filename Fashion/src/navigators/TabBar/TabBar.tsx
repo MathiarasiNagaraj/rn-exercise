@@ -21,13 +21,14 @@ export const TabBar = ({ tabContentComponent }) => {
 
   return (
     <Tab.Navigator
-      style={{marginTop:70}}
+     style={{marginTop:78}}
       screenOptions={{
         tabBarLabelStyle: {
           fontSize: 17,
           fontWeight: '500',
           fontFamily: 'Poppins-Medium',
           textTransform: 'capitalize',
+          backgroundColor:colors.white
         },
         tabBarScrollEnabled:true,
         tabBarItemStyle: {

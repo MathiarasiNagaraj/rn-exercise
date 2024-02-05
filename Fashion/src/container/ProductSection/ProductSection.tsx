@@ -27,7 +27,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({selectedProduct}) => {
     />
   );
   return (
-    <View style={styles.SectionWrapper}>
+    <View style={styles.sectionWrapper}>
       <Text style={styles.title}>{HOME.POPULAR_PRODUCTS.title}</Text>
       <View style={styles.wrapper}>{products}</View>
     </View>
@@ -37,7 +37,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({selectedProduct}) => {
 export default ProductSection;
 
 const styles = StyleSheet.create({
-  SectionWrapper: {
+  sectionWrapper: {
     marginVertical: 20,
   },
   wrapper: {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22.5,
-    fontWeight: '900',
+    fontWeight: '500',
     fontFamily: 'Poppins-Regular',
     color: colors.black,
     paddingLeft: 30,
