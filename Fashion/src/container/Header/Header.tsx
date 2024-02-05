@@ -6,15 +6,27 @@ import {
   StatusBar,
   View,
   Platform,
+  StyleProp,
+  ViewStyle
 } from 'react-native';
-import {CustomStatusBar} from '../../components/CustomStatusBar/CustomStatusBar';
+import { colors } from '../../styles/colors';
 
-import {colors} from '../../styles/colors';
+
+interface HeaderProps{
+  title?: string,
+  style?: StyleProp<ViewStyle>
+  icon: React.ReactNode,
+  cart:React.ReactNode
+}
 /**
- * @description Header Component of the app
- * @returns Header Component of the app
+ * @description Reusable Header component of Home Screen
+ * @param title title of the app
+ * @param icon icon to be used in header
+ * @param style custom style for header
+ * @param cart component
+ * @returns  Reusable Header
  */
-export const Header = ({title, icon, style, cart}) => {
+export const Header :React.FC<HeaderProps>= ({title, icon, style, cart}) => {
   return (
     <>
       <StatusBar

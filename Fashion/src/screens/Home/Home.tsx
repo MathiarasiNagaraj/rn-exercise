@@ -6,9 +6,5 @@ import BottomNavigator from '../../navigators/BottomNavigator/BottomNavigator';
  * @returns Home Page of the Fashion App
  */
 export const Home = () => {
-  return (
-    <>
-      <BottomNavigator  />
-    </>
-  );
+  return <BottomNavigator />;
 };

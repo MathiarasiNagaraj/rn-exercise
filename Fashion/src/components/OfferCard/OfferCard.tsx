@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View,Dimensions} from 'react-native';
+import {Image, StyleSheet, Text, View, Dimensions} from 'react-native';
 import {Offer} from '../../interface/Products';
 import {HOME} from '../../messages/CommonMessages';
 import {colors} from '../../styles/colors';
@@ -14,7 +14,7 @@ interface OfferProps {
  */
 const OfferCard: React.FC<OfferProps> = ({detail}) => {
   return (
-    <View style={[ styles.card]}>
+    <View style={[styles.card]}>
       <Image source={{uri: detail.modelImg}} style={styles.img} />
       <View style={styles.textWrapper}>
         <Text style={[globalStyles.bolderText, globalStyles.whiteText]}>
@@ -26,15 +26,10 @@ const OfferCard: React.FC<OfferProps> = ({detail}) => {
             <Text style={[globalStyles.whiteText, globalStyles.mediumText]}>
               {HOME.OFFER.useCode}
             </Text>
-            <View style={ styles.underLine}>
-            <Text
-              style={[
-                globalStyles.mediumText,
-                globalStyles.whiteText,
-        
-              ]}>
-              {detail.discountCode}
-            </Text>
+            <View style={styles.underLine}>
+              <Text style={[globalStyles.mediumText, globalStyles.whiteText]}>
+                {detail.discountCode}
+              </Text>
             </View>
           </View>
           <Text style={[globalStyles.mediumText, globalStyles.whiteText]}>
@@ -48,13 +43,12 @@ const OfferCard: React.FC<OfferProps> = ({detail}) => {
 
 export default OfferCard;
 
-const deviceWidth = Dimensions.get("window").width
-const deviceHeight=Dimensions.get("window").height
+const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   card: {
-    
-   width:deviceWidth*0.81,
-    height: deviceHeight*0.54,
+    width: deviceWidth * 0.81,
+    height: deviceHeight * 0.54,
 
     position: 'relative',
     marginVertical: 25,
@@ -62,21 +56,21 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 16,
     shadowColor: colors.black,
-    shadowOffset: { width: 0, height: 12 },
+    shadowOffset: {width: 0, height: 12},
     shadowRadius: 10,
-    shadowOpacity:0.25
+    shadowOpacity: 0.25,
   },
   underLine: {
     borderBottomWidth: 1.5,
     borderBottomColor: colors.white,
     margin: 0,
-    padding:0
+    padding: 0,
   },
   codeWrapper: {
     flexDirection: 'row',
-    marginBottom:12
+    marginBottom: 12,
   },
- 
+
   img: {
     position: 'absolute',
     height: '100%',

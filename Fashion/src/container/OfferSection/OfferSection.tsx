@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, View,Dimensions} from 'react-native';
+import {FlatList, StyleSheet, View,Dimensions} from 'react-native';
 import OfferCard from '../../components/OfferCard/OfferCard';
 import {Offer} from '../../interface/Products';
 import {colors} from '../../styles/colors';

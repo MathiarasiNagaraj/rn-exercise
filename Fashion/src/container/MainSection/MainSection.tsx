@@ -1,9 +1,6 @@
-import { NavigationContainer } from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {ScrollView, Text,View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import {Product, Offer} from '../../interface/Products';
-import BottomNavigator from '../../navigators/BottomNavigator/BottomNavigator';
-import DrawerNavigator from '../../navigators/DrawerNavigator/DrawerNavigator';
 import {
   getProductsByCategory,
   getOffersByCategory,
@@ -35,18 +32,12 @@ const MainSection: React.FC<MainSectionProps> = ({category}) => {
   }, [category]);
 
   return (
-   <View >
+    <View>
       <ScrollView showsVerticalScrollIndicator={false}>
-     
-      <OfferSection offers={selectedOffers} />
-      <ProductSection selectedProduct={selectedProduct} />
-    
-      </ScrollView> 
-      
-      </View>
-       
- 
-   
+        <OfferSection offers={selectedOffers} />
+        <ProductSection selectedProduct={selectedProduct} />
+      </ScrollView>
+    </View>
   );
 };
 

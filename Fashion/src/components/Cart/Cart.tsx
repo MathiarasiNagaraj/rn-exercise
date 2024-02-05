@@ -1,7 +1,8 @@
 import React, {useContext} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import ShoppingCart from '../../assets/images/icons/shoppingCart.svg';
-import { CartContext } from '../../context/CartContext';
+import {CartContext} from '../../context/CartContext';
+import { colors } from '../../styles/colors';
 
 /**
  * @description Cart component with quantity
@@ -35,14 +36,14 @@ const styles = StyleSheet.create({
     right: -6,
     height: 20,
     width: 20,
-    backgroundColor: '#e2801c',
+    backgroundColor: colors.darkOrange,
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
   },
   countText: {
     fontSize: 12,
-      color: '#ffffff',
-      fontFamily:'Poppins-Regular',
+    color: colors.white,
+    fontFamily: 'Poppins-Regular',
   },
 });

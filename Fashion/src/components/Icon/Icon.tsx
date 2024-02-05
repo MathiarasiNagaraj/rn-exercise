@@ -1,8 +1,16 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleProp ,ViewStyle} from 'react-native';
 
-
-const Icon = ({icon,style}) => {
+interface IconProps {
+  icon: React.ReactNode;
+  style?: StyleProp<ViewStyle>;
+}
+/**
+ * @description Icon wrapper component
+ * @param icon SVG or any icon to be rendered
+ * @returns  Icon wrapper component
+ */
+const Icon :React.FC<IconProps>= ({icon,style}) => {
   return <View style={style}>{icon}</View>;
 };
 

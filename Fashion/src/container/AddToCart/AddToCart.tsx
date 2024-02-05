@@ -12,6 +12,11 @@ import Icon from '../../components/Icon/Icon';
 interface AddToCartProps {
   onAddToCartHandler: () => void;
 }
+/**
+ * @description Add to Cart container with icons
+ * @param onAddToCartHandler function pointer for cart handler
+ * @returns  Add to cart container
+ */
 const AddToCart: React.FC<AddToCartProps> = ({onAddToCartHandler}) => {
   return (
     <View style={styles.bottomWrapper}>

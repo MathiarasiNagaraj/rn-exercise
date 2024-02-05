@@ -2,12 +2,25 @@ import React from 'react';
 import {StyleSheet, Text} from 'react-native';
 import {colors} from '../../styles/colors';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {BOTTOM_TABS} from '../../constants/commonConstants';
-import {Alert, Animated, TouchableOpacity} from 'react-native';
+import {Animated, TouchableOpacity} from 'react-native';
 import {CurvedBottomBar} from 'react-native-curved-bottom-bar';
+import TopSection from '../../container/TopSection/TopSection';
+import Profile from '../../screens/Profile/Profile';
+import Help from '../../screens/Help/Help';
+import WishList from '../../screens/WishList/WishList';
 
+interface RenderTabBarProps {
+  routeName: string;
+  selectedTab: string;
+  navigate: (routeName: string) => void; // Assuming navigate is a function that takes a string argument
+}
+
+/**
+ * @description Bottpm navigator component used in Home screen
+ * @returns Bottom Navigator component 
+ */
 const BottomNavigator = () => {
-  const renderIcon = (routeName, selectedTab) => {
+  const renderIcon = (routeName: string, selectedTab: string) => {
     let icon = '';
 
     switch (routeName) {
@@ -33,7 +46,11 @@ const BottomNavigator = () => {
       />
     );
   };
-  const renderTabBar = ({routeName, selectedTab, navigate}) => {
+  const renderTabBar = ({
+    routeName,
+    selectedTab,
+    navigate,
+  }: RenderTabBarProps) => {
     return (
       <TouchableOpacity
         onPress={() => navigate(routeName)}
@@ -43,14 +60,7 @@ const BottomNavigator = () => {
       </TouchableOpacity>
     );
   };
-  const tabItems = BOTTOM_TABS.map(items => (
-    <CurvedBottomBar.Screen
-      key={items.name}
-      name={items.name}
-      position={items.position}
-      component={items.component}
-    />
-  ));
+ 
   return (
     <CurvedBottomBar.Navigator
       type="DOWN"
@@ -62,16 +72,32 @@ const BottomNavigator = () => {
       screenOptions={{headerShown: false}}
       renderCircle={({selectedTab, navigate}) => (
         <Animated.View style={styles.btnCircleUp}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => Alert.alert('Click Action')}>
+          <TouchableOpacity style={styles.button}>
             <MaterialCommunityIcons name={'magnify'} color="white" size={25} />
           </TouchableOpacity>
         </Animated.View>
       )}
       tabBar={renderTabBar}>
-   {tabItems}
-    
+      <CurvedBottomBar.Screen
+        name={'Home'}
+        position={'LEFT'}
+        component={TopSection}
+      />
+      <CurvedBottomBar.Screen
+        name={'WishList'}
+        position={'LEFT'}
+        component={WishList}
+      />
+      <CurvedBottomBar.Screen
+        name={'Help'}
+        position={'RIGHT'}
+        component={Help}
+      />
+      <CurvedBottomBar.Screen
+        name={'Profile'}
+        position={'RIGHT'}
+        component={Profile}
+      />
     </CurvedBottomBar.Navigator>
   );
 };
@@ -82,7 +108,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 90,
-
   },
 
   btnCircleUp: {
@@ -102,7 +127,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 1,
-
   },
   button: {
     flex: 1,

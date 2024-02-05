@@ -1,5 +1,5 @@
 import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
-import React, {useCallback, useMemo, useRef} from 'react';
+import React, {useMemo} from 'react';
 import {Text, View, StyleSheet, FlatList} from 'react-native';
 import {HOME} from '../../messages/CommonMessages';
 import {colors} from '../../styles/colors';
@@ -10,13 +10,17 @@ import {Product} from '../../interface/Products';
 interface ProductDetailsProps {
   detail: Product;
 }
+/**
+ * @description Product details container component
+ * @param detail of product type
+ * @returns  Product detail ,Bottom navigator sheet
+ */
 const ProductDetails: React.FC<ProductDetailsProps> = ({detail}) => {
   const snapPoints = useMemo(() => ['38%', '50%'], []);
   const sizes = (
     <FlatList
       horizontal
-      ItemSeparatorComponent={() => <View style={{ width: 0 }} />}
-
+      ItemSeparatorComponent={() => <View style={{width: 0}} />}
       data={detail.available_sizes}
       renderItem={({item}) => (
         <Text style={[styles.itemWrapper, globalStyles.text]}>{item}</Text>

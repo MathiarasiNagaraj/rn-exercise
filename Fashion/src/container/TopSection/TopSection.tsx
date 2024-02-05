@@ -1,16 +1,21 @@
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Cart from '../../components/Cart/Cart';
 import {TITLE} from '../../constants/commonConstants';
-import DrawerNavigator from '../../navigators/DrawerNavigator/DrawerNavigator';
 import {TabBar} from '../../navigators/TabBar/TabBar';
 import {colors} from '../../styles/colors';
 import {globalStyles} from '../../styles/globalStyle';
 import {Header} from '../Header/Header';
 import MainSection from '../MainSection/MainSection';
 
-const TopSection = ({ navigation }) => {
+
+/**
+ * @description Top Section container  component used in Home screen
+ * @returns container for Header and Top bar
+ */
+const TopSection = () => {
+  const navigation = useNavigation();
   const handleDrawerOpen = () => {
     navigation.toggleDrawer();
   };
