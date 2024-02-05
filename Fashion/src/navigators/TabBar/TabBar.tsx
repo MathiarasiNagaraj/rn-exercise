@@ -1,9 +1,8 @@
 import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import MainSection from '../../container/MainSection/MainSection';
 import {CATEGORY} from '../../constants/commonConstants';
 import {colors} from '../../styles/colors';
-
+import {StyleSheet,Platform} from 'react-native';
 /**
  * @description Top bar component using React Navigation material top bar
  * @returns Top Bar component
@@ -21,7 +20,7 @@ export const TabBar = ({ tabContentComponent }) => {
 
   return (
     <Tab.Navigator
-     style={{marginTop:78}}
+     style={styles.wrapper}
       screenOptions={{
         tabBarLabelStyle: {
           fontSize: 17,
@@ -45,3 +44,18 @@ export const TabBar = ({ tabContentComponent }) => {
     </Tab.Navigator>
   );
 };
+const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: colors.white,
+    ...Platform.select(
+      {
+        ios: {
+          marginTop:70
+        },
+        android: {
+        marginTop:65
+        }
+      }
+    )
+}
+})
