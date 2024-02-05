@@ -10,14 +10,22 @@ import LeftArrowSVG from '../../assets/images/icons/leftArrow.svg';
 import Cart from '../../components/Cart/Cart';
 import {CartContext} from '../../context/CartContext';
 import {globalStyles} from '../../styles/globalStyle';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation ,useRoute} from '@react-navigation/native';
+
 import AddToCart from '../../container/AddToCart/AddToCart';
 import Icon from '../../components/Icon/Icon';
 import {Header} from '../../container//Header/Header';
 import ProductDetails from '../../components/ProductDetails/ProductDetails';
+import { Product } from '../../interface/Products';
 
-export const Product = ({route}) => {
-  const {detail} = route.params;
+
+
+interface ProductProps{
+  detail:Product
+}
+export const ProductScreen = () => {
+  const route=useRoute()
+  const {detail} = route.params as ProductProps;
   const {addToCart} = useContext(CartContext);
   const navigation = useNavigation();
 
