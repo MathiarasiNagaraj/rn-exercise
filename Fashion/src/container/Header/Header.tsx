@@ -10,7 +10,7 @@ import {
   ViewStyle
 } from 'react-native';
 import { colors } from '../../styles/colors';
-
+ 
 
 interface HeaderProps{
   title?: string,
